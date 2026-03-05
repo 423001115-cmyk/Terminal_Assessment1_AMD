@@ -247,9 +247,15 @@ class _AddEditTripScreenState extends State<AddEditTripScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.7),
+          color: Theme.of(context).brightness == Brightness.dark
+              ? Colors.grey.shade800.withValues(alpha: 0.7)
+              : Colors.white.withValues(alpha: 0.7),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Colors.grey.shade300),
+          border: Border.all(
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.grey.shade600
+                : Colors.grey.shade300,
+          ),
         ),
         child: Row(
           children: [
@@ -284,8 +290,10 @@ class _AddEditTripScreenState extends State<AddEditTripScreen> {
       backgroundColor: Colors.transparent,
       builder: (context) => Container(
         height: 300,
-        decoration: const BoxDecoration(
-          color: Colors.white,
+        decoration: BoxDecoration(
+          color: Theme.of(context).brightness == Brightness.dark
+              ? Colors.grey.shade900
+              : Colors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
         ),
         child: Column(
@@ -295,7 +303,9 @@ class _AddEditTripScreenState extends State<AddEditTripScreen> {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: Colors.grey.shade300,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.grey.shade600
+                    : Colors.grey.shade300,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),

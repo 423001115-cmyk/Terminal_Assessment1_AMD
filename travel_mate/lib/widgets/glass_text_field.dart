@@ -57,14 +57,21 @@ class GlassTextField extends StatelessWidget {
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
           filled: true,
-          fillColor: Colors.white.withValues(alpha: 0.7),
+          fillColor: Theme.of(context).brightness == Brightness.dark
+              ? Colors.grey.shade800.withValues(alpha: 0.7)
+              : Colors.white.withValues(alpha: 0.7),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: BorderSide.none,
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(color: Colors.grey.shade300, width: 1),
+            borderSide: BorderSide(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.grey.shade600
+                  : const Color.fromARGB(255, 0, 0, 0),
+              width: 1,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
