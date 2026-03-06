@@ -244,24 +244,28 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
             ),
           ),
           const SizedBox(height: 8),
-          Stack(
-            children: [
-              Container(
-                height: 8,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(4),
-                ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: LinearProgressIndicator(
+              value: trip.completionPercentage,
+              minHeight: 8,
+              backgroundColor: Colors.grey.shade300,
+              valueColor: AlwaysStoppedAnimation<Color>(
+                Color.lerp(
+                  AppTheme.primaryBlue,
+                  AppTheme.primaryTeal,
+                  trip.completionPercentage,
+                )!,
               ),
-              Container(
-                height: 8,
-                width: percent == 0 ? 0 : percent.toDouble() * 2.4,
-                decoration: BoxDecoration(
-                  gradient: AppTheme.primaryGradient,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-              ),
-            ],
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            '$percent%',
+            style: TextStyle(
+              fontSize: 12,
+              color: AppTheme.getTextSecondaryColor(context).withValues(alpha: 0.6),
+            ),
           ),
         ],
       ),

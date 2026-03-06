@@ -46,14 +46,14 @@ class AppTheme {
 
   static Color glassFillColor(BuildContext context) {
     return Theme.of(context).brightness == Brightness.dark
-        ? Colors.black.withOpacity(0.2)
-        : Colors.white.withOpacity(0.2);
+        ? Colors.black.withValues(alpha: 0.2)
+        : Colors.white.withValues(alpha: 0.2);
   }
 
   static Color glassBorderColor(BuildContext context) {
     return Theme.of(context).brightness == Brightness.dark
-        ? Colors.white.withOpacity(0.3)
-        : Colors.white.withOpacity(0.3);
+        ? Colors.white.withValues(alpha: 0.3)
+        : Colors.white.withValues(alpha: 0.3);
   }
 
   static Color getTextPrimaryColor(BuildContext context) {
@@ -188,7 +188,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: Colors.grey.shade800.withOpacity(0.5),
+        fillColor: Colors.grey.shade800.withValues(alpha: 0.5),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide.none,
