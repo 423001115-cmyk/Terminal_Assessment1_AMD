@@ -74,5 +74,5 @@ class TravelMateApp extends StatelessWidget {
         },
       ),
     );
-  }
+  } // End of TravelMateApp
 }
